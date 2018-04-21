@@ -140,4 +140,19 @@ step 13: password validations
 		added to models/user.rb :
 			validates :password, presence: true, length: { minimum: 6 } 
 
+step 14: Gravatar image
+	added to veiws/user/show.html.erb:
+			<% provide(:title, @user.name) %>
+			<h1>
+			  <%= gravatar_for @user %>
+			  <%= @user.name %>
+			</h1>
+	made a helper method: gravatar_for  to the helpers/users_helper.rb file:
+			def gravatar_for(user, size: 80)
+		    gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
+		    gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
+		    image_tag(gravatar_url, alt: user.name, class: "gravatar")
+		  end
+	placed the gravatar image in a sidebar and added styling in assets/stylesheets/sidebar_gravatar.scss
+
 
