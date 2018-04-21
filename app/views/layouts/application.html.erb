@@ -3,15 +3,15 @@
   <head>
     <title>UserModel</title>
     <%= csrf_meta_tags %>
-
+    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
   	<nav>
-  		<%= link_to 'Home', root_path %>
-  		<%= link_to 'Users', users_path %>
+  		<%= link_to 'Home', root_path, class: 'btn btn-info' %> |
+  		<%= link_to 'Users', users_path, class: 'btn btn-info' %>
   	</nav>
 
     <%= yield %>

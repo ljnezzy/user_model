@@ -106,4 +106,11 @@ added the following files to veiws/users :
 		show.html.erb
 
 
-step 10: 
+step 10: nav bar in views/layouts/application.html.erb :
+		<nav>
+  		<%= link_to 'Home', root_path %>
+  		<%= link_to 'Users', users_path %>
+  	</nav>
+
+
+
