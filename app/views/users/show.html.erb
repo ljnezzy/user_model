@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<div>
+	<p>The current date and time is <%= Time.now %></p>
+</div>
+
 <p>
   <strong>Name:</strong>
   <%= @user.name %>
@@ -8,6 +12,10 @@
 <p>
   <strong>Email:</strong>
   <%= @user.email %>
+</p>
+<p>
+	Account created on <%= @user.created_at %><br>
+	Account last updated on <%= @user.updated_at %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user), class: 'btn btn-info btn-sm' %> |
