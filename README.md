@@ -135,3 +135,9 @@ step 12: adding email index
 		added to models/user.rb (before validations):
 				 before_save { email.downcase! }
 
+step 13: password validations
+	was somewhat done by using password:digest and the gem 'bcrypt' when creating the user model or our case resource. it added: has_secure_password to the models/user.rb file.
+		added to models/user.rb :
+			validates :password, presence: true, length: { minimum: 6 } 
+
+
