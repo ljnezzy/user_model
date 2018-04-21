@@ -112,5 +112,16 @@ step 10: nav bar in views/layouts/application.html.erb :
   		<%= link_to 'Users', users_path %>
   	</nav>
 
+  	added buttons to links
+
+step 11: User validations
+	file models/user.rb added:
+			validates :name, presence: true, length: { maximum: 50 }
+			VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+  		validates :email, presence: true, length: { maximum: 255 },
+                    format: { with: VALID_EMAIL_REGEX },
+                    uniqueness: { case_sensitive: false }
+
+
 
 
