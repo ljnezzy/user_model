@@ -123,5 +123,15 @@ step 11: User validations
                     uniqueness: { case_sensitive: false }
 
 
-
+step 12: adding email index
+		ran:   
+				rails g migration add_index_to_users_email
+		added to migration file:
+				def change
+				  add_index :users, :email, unique: true
+				end
+		ran:
+				rails db:migrate
+		added to models/user.rb (before validations):
+				 before_save { email.downcase! }
 
