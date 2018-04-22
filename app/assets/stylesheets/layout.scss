@@ -1,4 +1,5 @@
-@import "bootstrap"; 
+@import "bootstrap";
+@import "colors"; 
 
 html,
 body {
@@ -23,4 +24,26 @@ body {
   border-radius: 5px;
 }
 
+/* forms */
 
+#error_explanation {
+  color: $errors-text-color;
+  background: $errors-background-color;
+  padding: 10px 10px 0 10px;
+  border-radius: 5px;
+  ul {
+    color: $errors-text-color;
+    margin: 0 0 30px 0;
+    padding-bottom: 10px;
+  }
+}
+
+div.field_with_errors {
+    display: inline;
+    label {
+      color: $errors-text-color;
+    }
+    input, textarea, select {
+      background: $errors-background-color;
+    }
+  }

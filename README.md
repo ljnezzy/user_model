@@ -155,4 +155,32 @@ step 14: Gravatar image
 		  end
 	placed the gravatar image in a sidebar and added styling in assets/stylesheets/sidebar_gravatar.scss
 
+step 15: signup page error messages
+	redid the error messages and placed it in its own folder and file veiws/shared/_error_messages.html.erb 
+
+		looks like:
+				<% if object.errors.any? %>
+				  <div id="error_explanation">
+				    <header>
+				      <h2>
+				        Oops! Your infomation could not be saved.
+				      </h2>
+				      <h3>
+				        Please correct the following 
+				        <%= pluralize(object.errors.size, "error") %>:
+				      </h3>
+				    </header>
+				    <ul>
+				      <% object.errors.full_messages.each do |message| %>
+				        <li><%= message %></li>
+				      <% end %>
+				    </ul>
+				  </div>
+				<% end %>
+
+	to display the error message placed a render in _form.html.erb  :
+				<%= render 'shared/error_messages', object: @user %>
+
+	made a colors partical for the text and background colors of the error message placed it in app/assets/stylesheets/_colors.scss
+	created css for the error message in app/assets/stylesheets/layouts.scss
 
