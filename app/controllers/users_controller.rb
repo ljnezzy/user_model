@@ -18,7 +18,9 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
   def create
     @user = User.new(user_params)
     if @user.save
-	      redirect_to @user, notice: "Thanks for signing up!"
+	      #redirect_to @user, notice: "Thanks for signing up!"
+        flash[:success] = "Thanks for signing up!"
+        redirect_to @user
 	    else
 	      render :new
 	    end 
@@ -26,15 +28,19 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def update
     if @user.update(user_params)
-	      redirect_to @user, notice: "Account successfully updated!"
-	    else
+	      #redirect_to @user, notice: "Account successfully updated!"
+	       flash[:success] = "Account successfully updated!"
+         redirect_to @user
+      else
 	      render :edit
 	  end
   end
 
   def destroy
     @user.destroy
-	    redirect_to users_path, alert: "Account successfully deleted!"
+	    #redirect_to users_path, alert: "Account successfully deleted!"
+      flash[:danger] = "Account successfully deleted!"
+      redirect_to users_path
   end
 
 private

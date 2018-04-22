@@ -21,7 +21,6 @@ body {
   max-width: 880px;
   padding: 10px 40px;
   background-color: #cccccc;
-  border-radius: 5px;
 }
 
 /* forms */
@@ -47,3 +46,15 @@ div.field_with_errors {
       background: $errors-background-color;
     }
   }
+
+/* FLASHES */
+.alert-success{
+  text-align: center;
+  box-shadow: #ffc 0 0 4px;
+}
+
+.alert-danger{
+  text-align: center;
+  box-shadow: #ffc 0 0 4px;
+  text-transform: uppercase;
+}

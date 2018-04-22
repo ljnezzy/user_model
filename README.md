@@ -184,3 +184,21 @@ step 15: signup page error messages
 	made a colors partical for the text and background colors of the error message placed it in app/assets/stylesheets/_colors.scss
 	created css for the error message in app/assets/stylesheets/layouts.scss
 
+step 16: flash
+	added flash messages for update, creating, and destory users
+	used flash[:success] and flash[:danger] in the controller file.
+	made a flash partical in veiws/layouts/_flashes.html.erb
+
+				<% flash.each do |message_type, message| %>
+					<div class="alert alert-<%= message_type %>"><%= message %></div>
+				<% end %>
+	rendered it in views/layouts/application.html.erb
+				<%= render "layouts/flashes"  %>
+	added styling using css class are:
+				.alert-success
+				.alert-danger
+
+
+
+
+
